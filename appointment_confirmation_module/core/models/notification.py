@@ -9,7 +9,7 @@ class Notification:
     created_at: datetime
     user_id: int
     def __str__(self) -> str:
-        return self.title
+        return f"title: {self.title}, description: {self.description}, created_at: {self.created_at}, user_id: {self.user_id}"
     @classmethod
     def create_notification(cls, title: str, description: str , receiver_id) -> 'Notification':
         return Notification(title, description, datetime.now(), receiver_id)

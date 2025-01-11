@@ -1,10 +1,9 @@
 from abc import abstractmethod, ABC
 
 from appointment_confirmation_module.core.models.appointment_notification import AppointmentNotification
-from appointment_confirmation_module.core.models.notification import Notification
 
 
-class NotificationRepoAbc(ABC):
+class AppointmentNotificationPort(ABC):
     @abstractmethod
-    def save(self, notification: Notification) -> None:
+    def notify(self, appointment_notification: AppointmentNotification) -> None:
         pass

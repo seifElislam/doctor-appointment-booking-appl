@@ -11,6 +11,10 @@ class AppointmentNotification:
     doctor_notification: Notification
     patient_notification: Notification
 
+    def __init__(self, slot: Slot):
+        self.slot = slot
+        self.make_slot_notification()
+
     def make_doctor_notification(self):
         self.doctor_notification = Notification.create_notification(
             title="Appointment scheduled with patient",
@@ -28,3 +32,6 @@ class AppointmentNotification:
     def make_slot_notification(self):
         self.make_doctor_notification()
         self.make_patient_notification()
+
+    def get_notifications(self):
+        return self.doctor_notification, self.patient_notification
