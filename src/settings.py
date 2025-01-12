@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_extensions',
     'doctor_availability.apps.DoctorAvailabilityConfig',
     'appointment_confirmation_module.shell.apps.AppointmentConfirmationModuleConfig',
 ]
@@ -129,3 +130,5 @@ MIGRATION_MODULES = {
     'doctor_availability': 'doctor_availability.migrations',
     'appointment_confirmation_module': 'appointment_confirmation_module.shell.db.migrations',
 }
+
+SHELL_PLUS = "plain"
