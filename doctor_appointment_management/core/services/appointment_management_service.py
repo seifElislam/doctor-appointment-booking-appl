@@ -1,6 +1,6 @@
-from doctor_appointment_management_module.core.inputports.appointment_management_service_port import \
+from doctor_appointment_management.core.inputports.appointment_management_service_port import \
 AppointmentManagementServicePort
-from doctor_appointment_management_module.core.outputports.appointment_management_repo_interface import \
+from doctor_appointment_management.core.outputports.appointment_management_repo_interface import \
 AppointmentManagementRepoInterface
 
 

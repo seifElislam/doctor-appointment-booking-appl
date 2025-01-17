@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from doctor_appointment_management_module.core.models.patient import Patient
+from doctor_appointment_management.core.models.patient import Patient
 from datetime import datetime
 # import uuid
 
