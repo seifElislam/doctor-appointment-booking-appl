@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'doctor_availability.apps.DoctorAvailabilityConfig',
+    'doctor_appointment_management.apps.DoctorAppointmentManagementConfig',
 ]
 
 MIDDLEWARE = [
