@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_extensions',
     'doctor_availability.apps.DoctorAvailabilityConfig',
+    'appointment_confirmation_module.shell.apps.AppointmentConfirmationModuleConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MIGRATION_MODULES = {
+    'doctor_availability': 'doctor_availability.migrations',
+    'appointment_confirmation_module': 'appointment_confirmation_module.shell.db.migrations',
+}
+
+SHELL_PLUS = "plain"
