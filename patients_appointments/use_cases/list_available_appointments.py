@@ -1,16 +1,12 @@
-def list_available_appointments(doctor_id):
-    """
-    List available appointments for a specific doctor.
+from typing import List
+from dependency_injector.wiring import inject, Provide
+from patients_appointments.domain.entities.slot import Slot
+from patients_appointments.domain.interfaces.repositories import SlotRepositoryInterface
 
-    Args:
-        doctor_id (int): The ID of the doctor for whom to list available appointments.
+class ListAvailableSlotsUseCase:
+    @inject
+    def __init__(self, repository: SlotRepositoryInterface = Provide[SlotRepositoryInterface]):
+        self.repository = repository
 
-    Returns:
-        list: A list of available appointments for the specified doctor.
-    """
-    from patients_appointments.domain.interfaces.repositories import AppointmentRepository
-
-    repository = AppointmentRepository()
-    available_appointments = repository.list_appointments(doctor_id=doctor_id, status='AVAILABLE')
-    
-    return available_appointments
+    def execute(self, doctor_id:int) -> List[Slot]:
+        return self.repository.list_available_slots(doctor_id=doctor_id)

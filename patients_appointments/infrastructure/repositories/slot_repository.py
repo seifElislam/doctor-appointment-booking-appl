@@ -25,8 +25,6 @@ class SlotRepository(SlotRepositoryInterface):
                 doctor_name=slot.doctor_name,
                 is_reserved=slot.is_reserved
             )
-            print("[[[[[[[[[[[[[[[[django_slot]]]]]]]]]]]]]]]]")
-            print(django_slot)
         else:
             django_slot = Slot.objects.get(id=slot.id)
             django_slot.time = slot.time

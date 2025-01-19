@@ -27,5 +27,3 @@ class PatientsAppointmentsConfig(AppConfig):
                 "patients_appointments.presentation.views.book_appointment_view"
             ]
         )
-        print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@22")
-        print(self.container.providers)

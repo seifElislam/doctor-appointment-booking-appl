@@ -15,7 +15,6 @@ class BookAppointmentUseCase:
         self.slot_repository = slot_repository
         
     def execute(self, patient_id: str, slot_id: int):
-        print("ssssssssssssssssssssssssssss")
         slot:Slot = self.slot_repository.get_slot_by_id(slot_id)
         
         print(slot)
@@ -29,7 +28,6 @@ class BookAppointmentUseCase:
         
         slot.mark_as_reserved()
         
-        print(slot)
         self.appointment_repository.save_appointment(appointment)
         self.slot_repository.save_slot(slot)
         

@@ -2,6 +2,7 @@ from dependency_injector import containers, providers
 from patients_appointments.infrastructure.repositories.appointment_repository import AppointmentRepository
 from patients_appointments.infrastructure.repositories.slot_repository import SlotRepository
 from patients_appointments.use_cases.book_appointment import BookAppointmentUseCase
+from patients_appointments.use_cases.list_available_appointments import ListAvailableSlotsUseCase
 
 
 class Container(containers.DeclarativeContainer):
@@ -26,3 +27,7 @@ class Container(containers.DeclarativeContainer):
         slot_repository=slot_repository
     )
     
+    list_available_appointments_use_case = providers.Factory(
+        ListAvailableSlotsUseCase,
+        repository=slot_repository
+    )
