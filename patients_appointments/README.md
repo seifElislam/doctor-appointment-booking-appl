@@ -7,20 +7,39 @@ This project is a Doctor/Patient Appointment Management System designed to facil
 ## Project Structure
 
 ```
-patients_appointments
+├── apps.py
+├── containers.py
 ├── domain
 │   ├── entities
+│   │   ├── appointment.py
+│   │   ├── doctor.py
+│   │   ├── patient.py
+│   │   └── slot.py
+│   ├── exceptions
+│   │   └── slot_is_reserved_exception.py
 │   ├── interfaces
+│   │   ├── repositories.py
+│   │   └── services.py
 │   └── value_objects
+│       └── appointment_status.py
 ├── infrastructure
-│   ├── models.py
-│   ├── repositories
-│   └── serializers.py
+│   ├── db
+│   │   ├── migrations
+│   │   │   
+│   │   └── models
+│   │       ├── appointment_entity.py
+│   │       └── slot_entity.py
+│   ├── gateways
+│   └── repositories
+│       ├── appointment_repository.py
+│       └── slot_repository.py
 ├── presentation
+│   ├── serializers.py
 │   ├── urls.py
-│   └── views.py
-├── use_cases
-│   ├── list_available_appointments.py
-│   └── book_appointment.py
-├── apps.py
-└── README.md
+│   └── views
+│       └── book_appointment_view.py
+├── README.md
+└── use_cases
+   ├── book_appointment.py
+   └── list_available_appointments.py
+```
