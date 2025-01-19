@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'doctor_availability.apps.DoctorAvailabilityConfig',
     'appointment_confirmation_module.shell.apps.AppointmentConfirmationModuleConfig',
+    'patients_appointments.apps.PatientsAppointmentsConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,6 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MIGRATION_MODULES = {
     'doctor_availability': 'doctor_availability.migrations',
     'appointment_confirmation_module': 'appointment_confirmation_module.shell.db.migrations',
+    "patients_appointments": "patients_appointments.infrastructure.db.migrations"
 }
 
 SHELL_PLUS = "plain"
