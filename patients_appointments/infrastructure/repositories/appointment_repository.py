@@ -21,6 +21,5 @@ class AppointmentRepository(AppointmentRepositoryInterface):
             patient_id=appointment.patient_id,
             patient_name=appointment.patient_name,
             reserved_at=appointment.reserved_at,
-            reserved_at=appointment.reserved_at
         )
         django_appointment.save()

@@ -2,13 +2,13 @@ from django.db import models
 from patients_appointments.domain.entities.slot import Slot as DomainSlot
 
 class Slot(models.Model):
-    time = models.TimeField()
+    time = models.DateTimeField()
     doctor_id = models.IntegerField()
     doctor_name = models.CharField(max_length=255)
     is_reserved = models.BooleanField(default=False)
     
-    class Meta:
-        managed = False # this model is managed by another module 
+    # class Meta:
+    #     managed = True # this model is managed by another module 
     
     def to_domain(self):
         return DomainSlot(
