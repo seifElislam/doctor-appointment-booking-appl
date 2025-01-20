@@ -1,4 +1,5 @@
 from dependency_injector import containers, providers
+from patients_appointments.infrastructure.gateways.gateway import Gateway
 from patients_appointments.infrastructure.repositories.appointment_repository import AppointmentRepository
 from patients_appointments.infrastructure.repositories.slot_repository import SlotRepository
 from patients_appointments.use_cases.book_appointment import BookAppointmentUseCase
@@ -24,10 +25,15 @@ class Container(containers.DeclarativeContainer):
     book_appointment_use_case = providers.Factory(
         BookAppointmentUseCase,
         appointment_repository=appointmet_repository,
-        slot_repository=slot_repository
+        slot_repository=slot_repository,
+        gateway=Gateway
     )
     
     list_available_appointments_use_case = providers.Factory(
         ListAvailableSlotsUseCase,
         repository=slot_repository
+    )
+    
+    gateway= providers.Singleton(
+        Gateway
     )
