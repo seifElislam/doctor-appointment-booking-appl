@@ -128,7 +128,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MIGRATION_MODULES = {
-    'doctor_availability': 'doctor_availability.migrations',
+    'doctor_availability': 'doctor_availability.infrastructure.migrations',
     'appointment_confirmation_module': 'appointment_confirmation_module.shell.db.migrations',
     "patients_appointments": "patients_appointments.infrastructure.db.migrations"
 }
