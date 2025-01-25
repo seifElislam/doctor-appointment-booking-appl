@@ -6,3 +6,4 @@ class AppointmentService:
     def book_appointment(self, appointment_id, patient_id):
         """Book an appointment for a patient."""
         pass
+
