@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_extensions',
-    'doctor_availability.apps.DoctorAvailabilityConfig',
+    'doctor_availability.application.apps.DoctorAvailabilityConfig',
     'appointment_confirmation_module.shell.apps.AppointmentConfirmationModuleConfig',
     'patients_appointments.apps.PatientsAppointmentsConfig',
 ]
