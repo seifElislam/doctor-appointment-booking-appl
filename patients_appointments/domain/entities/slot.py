@@ -7,12 +7,10 @@ class Slot:
     id: str
     time: datetime
     doctor_id: str
-    doctor_name: str
     is_reserved: bool
     
     
     def mark_as_reserved(self):
-        print("Marking slot as reserved")
         if self.is_reserved:
             raise SlotIsReservedException()
         

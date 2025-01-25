@@ -7,6 +7,8 @@ class Doctor(models.Model):
     """
     name = models.CharField(max_length=100, blank=False)
     specialization = models.CharField(max_length=100, blank=True)
+    email = models.EmailField(max_length=100, blank=False)
+    phone = models.CharField(max_length=15, blank=False)
 
 
 class Slot(models.Model):
@@ -18,3 +20,4 @@ class Slot(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     is_reserved = models.BooleanField(default=False)
     cost = models.DecimalField(max_digits=5, decimal_places=3)
+    time = models.DateTimeField()
