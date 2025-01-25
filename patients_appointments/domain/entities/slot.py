@@ -12,6 +12,7 @@ class Slot:
     
     
     def mark_as_reserved(self):
+        print("Marking slot as reserved")
         if self.is_reserved:
             raise SlotIsReservedException()
         

@@ -17,4 +17,4 @@ class BookAppointmentView(APIView):
         except Exception as e:
            raise CustomException(str(e))
         
-        return Response(status=201)
+        return Response(status=200)
