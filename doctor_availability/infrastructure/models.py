@@ -17,4 +17,4 @@ class Slot(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     is_reserved = models.BooleanField(default=False)
-    cost = models.DecimalField()
+    cost = models.DecimalField(max_digits=5, decimal_places=3)
