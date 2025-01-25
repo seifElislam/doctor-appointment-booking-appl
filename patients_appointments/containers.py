@@ -3,7 +3,7 @@ from patients_appointments.infrastructure.gateways.gateway import Gateway
 from patients_appointments.infrastructure.repositories.appointment_repository import AppointmentRepository
 from patients_appointments.infrastructure.repositories.patient_repository import PatientRepository
 from patients_appointments.infrastructure.repositories.slot_repository import SlotRepository
-from patients_appointments.infrastructure.repositories.doctor_repository import InMemoryDoctorRepository
+from patients_appointments.infrastructure.repositories.doctor_repository import DoctorRepository
 from patients_appointments.use_cases.book_appointment import BookAppointmentUseCase
 from patients_appointments.use_cases.list_available_appointments import ListAvailableSlotsUseCase
 
@@ -29,7 +29,7 @@ class Container(containers.DeclarativeContainer):
     )
     
     doctor_repository = providers.Factory(
-        InMemoryDoctorRepository
+        DoctorRepository
     )
     
     gateway = providers.Factory(

@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import Mock, patch
 from datetime import datetime
-from patients_appointments.domain.exceptions.slot_is_reserved_exception import SlotIsReservedException
+from patients_appointments.domain.exceptions.slot_exceptions import SlotIsReservedException
 from patients_appointments.use_cases.book_appointment import BookAppointmentUseCase
 from patients_appointments.domain.entities.slot import Slot
 from patients_appointments.domain.entities.patient import Patient

@@ -5,25 +5,27 @@ from django.urls import reverse
 from patients_appointments.domain.entities.slot import Slot
 from patients_appointments.domain.entities.patient import Patient
 from patients_appointments.domain.entities.doctor import Doctor
-from patients_appointments.domain.exceptions.slot_is_reserved_exception import SlotIsReservedException
+from patients_appointments.domain.exceptions.slot_exceptions import SlotIsReservedException
 from django.test import TransactionTestCase
 from patients_appointments.infrastructure.db.models.appointment_entity import  Appointment as AppointmentModel
 from patients_appointments.infrastructure.db.models.slot_entity import Slot as SlotModel
 from patients_appointments.infrastructure.db.models.patient_entity import Patient as PatientModel
+from patients_appointments.infrastructure.db.models.doctor_entity import Doctor as DoctorModel
 
 class TestBookAppointmentEndToEnd(TransactionTestCase):
     def setUp(self):
         self.patient = PatientModel.objects.create( name='John Doe')
+        self.doctor = DoctorModel.objects.create(name='Dr. Smith' ,specialization = 'Dentist')
         self.slot = SlotModel.objects.create(
             time='2024-01-01 10:00:00',
-            doctor_id=1,
-            doctor_name='Dr. Smith',
+            doctor_id=self.doctor.id,
+            cost = 10,
             is_reserved=False
         )
         self.resrved_slot = SlotModel.objects.create(
             time='2024-01-01 11:00:00',
-            doctor_id=1,
-            doctor_name='Dr. Smith',
+            doctor_id=self.doctor.id,
+            cost = 10,
             is_reserved=True
         )
 

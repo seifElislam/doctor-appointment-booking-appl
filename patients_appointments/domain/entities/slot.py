@@ -1,6 +1,6 @@
 from datetime import datetime
 from dataclasses import dataclass
-from patients_appointments.domain.exceptions.slot_is_reserved_exception import SlotIsReservedException
+from patients_appointments.domain.exceptions.slot_exceptions import SlotIsReservedException
 
 @dataclass
 class Slot:
