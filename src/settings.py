@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'doctor_availability.application.apps.DoctorAvailabilityConfig',
     'appointment_confirmation_module.shell.apps.AppointmentConfirmationModuleConfig',
     'patients_appointments.apps.PatientsAppointmentsConfig',
+    'doctor_appointment_management.apps.DoctorAppointmentManagementConfig',
 ]
 
 MIDDLEWARE = [
