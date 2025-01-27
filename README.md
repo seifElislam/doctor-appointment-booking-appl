@@ -27,3 +27,8 @@ Before setting up the project, ensure you have the following installed:
     ```commandline
     python manage.py runserver
     ```
+## Archtiture Validation
+
+1. Dependency directions
+
+        lint-imports 

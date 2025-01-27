@@ -1,7 +1,7 @@
-from appointment_confirmation_module.shared.doctor_dto import DoctorDTO
-from appointment_confirmation_module.shared.patient_dto import PatientDTO
-from appointment_confirmation_module.shared.slot_dto import SlotDTO
-from appointment_confirmation_module.shell.services.apointment_notification_adapter import AppointmentNotificationAdapter
+from appointment_confirmation_module.shared import DoctorDTO
+from appointment_confirmation_module.shared import PatientDTO
+from appointment_confirmation_module.shared import SlotDTO
+from appointment_confirmation_module.internal.shell.services.apointment_notification_adapter import AppointmentNotificationAdapter
 
 
 def send_appointment_notification(doctor_dto:DoctorDTO,patient_dto:PatientDTO,slot_dto:SlotDTO):

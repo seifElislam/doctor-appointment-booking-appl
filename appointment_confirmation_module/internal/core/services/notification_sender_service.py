@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from appointment_confirmation_module.core.output_ports.notification_providers.notification_provider_port import NotificationProviderPort
+from appointment_confirmation_module.internal.core.output_ports.notification_providers.notification_provider_port import NotificationProviderPort
 
 
 @dataclass
