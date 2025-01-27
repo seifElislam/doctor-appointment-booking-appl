@@ -2,7 +2,7 @@ from django.urls import path
 from .views import AppointmentScheduledView, AppointmentCompleteView, AppointmentCancelView
 
 urlpatterns = [
-    path('schedueled/', AppointmentScheduledView.as_view(), 
+    path('booked/', AppointmentScheduledView.as_view(), 
          name='scheduled-appointments'),
     path('<int:id>/cancel/', AppointmentCancelView.as_view(),
          name='cancel-appointment'),

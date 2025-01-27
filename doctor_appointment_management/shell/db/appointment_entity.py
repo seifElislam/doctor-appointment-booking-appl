@@ -1,7 +1,9 @@
 from django.db import models
 
-class Appointment(models.Model):
+class AppointmentManagement(models.Model):
     id = models.AutoField(primary_key=True)
-    # patient = models.ForeignKey('Patient', on_delete=models.CASCADE)
+    slot_id = models.IntegerField()
+    patient_id = models.IntegerField()
+    patient_name = models.CharField(max_length=255)
     reserved_at = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=20, default="scheduled")
+    status = models.CharField(max_length=15, default="booked")

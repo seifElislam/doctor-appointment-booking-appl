@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 class AppointmentManagementServicePort(ABC):
     @abstractmethod
-    def get_schedeuled_appointments(self) -> list:
+    def get_booked_appointments(self) -> list:
         pass
 
     @abstractmethod

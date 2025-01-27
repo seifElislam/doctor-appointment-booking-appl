@@ -11,7 +11,7 @@ class AppointmentScheduledView(APIView):
         try:
             repository = AppointmentManagementRepository()
             service = AppointmentManagementService(repository)
-            appointments = service.get_schedeuled_appointments()
+            appointments = service.get_booked_appointments()
             return Response({"appointments": appointments}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
