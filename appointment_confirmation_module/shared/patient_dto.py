@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from appointment_confirmation_module.core.models.patient import Patient
+from appointment_confirmation_module.internal.core.models.patient import Patient
 
 @dataclass
 class PatientDTO:

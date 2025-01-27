@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 
-from appointment_confirmation_module.core.models.slot import Slot
+from appointment_confirmation_module.internal.core.models.slot import Slot
 
 
 @dataclass

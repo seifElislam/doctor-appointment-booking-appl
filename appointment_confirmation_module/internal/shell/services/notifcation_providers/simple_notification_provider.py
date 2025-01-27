@@ -1,4 +1,4 @@
-from appointment_confirmation_module.core.output_ports.notification_providers.simple_notification_provider_port import \
+from appointment_confirmation_module.internal.core.output_ports.notification_providers.simple_notification_provider_port import \
     SimpleNotificationProviderPort
 
 

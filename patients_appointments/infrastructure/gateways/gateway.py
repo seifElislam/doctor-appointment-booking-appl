@@ -1,8 +1,8 @@
-from appointment_confirmation_module.shared.doctor_dto import DoctorDTO
-from appointment_confirmation_module.shared.patient_dto import PatientDTO
-from appointment_confirmation_module.shared.slot_dto import SlotDTO
+from appointment_confirmation_module.shared import DoctorDTO
+from appointment_confirmation_module.shared import PatientDTO
+from appointment_confirmation_module.shared import SlotDTO
 
-from appointment_confirmation_module.shared.api import send_appointment_notification
+from appointment_confirmation_module.shared import send_appointment_notification
 from patients_appointments.domain.entities.doctor import Doctor
 from patients_appointments.domain.entities.patient import Patient
 from patients_appointments.domain.entities.slot import Slot

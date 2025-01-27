@@ -1,0 +1,47 @@
+[importlinter]
+
+root_packages=
+    patients_appointments
+    appointment_confirmation_module
+
+[importlinter:contract:one]
+name = forbidden import of infrastructure into domain
+type = forbidden
+
+source_modules = 
+    patients_appointments.domain
+    patients_appointments.use_cases
+
+forbidden_modules =
+    patients_appointments.infrastructure
+    
+
+[importlinter:contract:two]
+name = forbidden import of infrastructure or usecase into domain
+type = forbidden
+
+source_modules = 
+    patients_appointments.domain
+
+forbidden_modules =
+    patients_appointments.use_cases
+    patients_appointments.infrastructure
+
+[importlinter:contract:three]
+name = forbidden import from internal patteints appointment condifirmaion module
+
+type = forbidden
+
+source_modules = 
+    patients_appointments
+
+forbidden_modules =
+    appointment_confirmation_module.internal
+
+ignore_imports = 
+     appointment_confirmation_module.shared.api ->  appointment_confirmation_module.internal.shell.services.apointment_notification_adapter
+     appointment_confirmation_module.shared.slot_dto ->  appointment_confirmation_module.internal.core.models.slot
+     appointment_confirmation_module.shared.doctor_dto ->  appointment_confirmation_module.internal.core.models.doctor
+     
+     appointment_confirmation_module.shared.patient_dto ->  appointment_confirmation_module.internal.core.models.patient
+     
