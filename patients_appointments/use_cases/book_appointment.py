@@ -7,6 +7,8 @@ from datetime import datetime
 from dependency_injector.wiring import inject , Provide
 from patients_appointments.domain.interfaces.gateways import AppointmentConfirmationGatewayInterface
 from patients_appointments.domain.interfaces.repositories import AppointmentRepositoryInterface, PatientRepositoryInterface , SlotRepositoryInterface , DoctorRepositoryInterface
+from patients_appointments.domain.events.domain_event_puplisher import DomainEventPublisher
+from shared.domain.event_bus_setup import event_bus
 
 class BookAppointmentUseCase:
     @inject
@@ -38,6 +40,9 @@ class BookAppointmentUseCase:
         self.appointment_repository.save_appointment(appointment)
         self.slot_repository.save_slot(slot)
         
+
+        event_publisher = DomainEventPublisher(event_bus)
+        event_publisher.appointment_booked_puplish(appointment)
         self.gateway.send_notification(slot=slot , patient= patient , doctor=doctor) # todo send confirmation notification to patient and doctor
         
         

@@ -1,17 +1,17 @@
 from doctor_appointment_management.core.outputports.appointment_management_repo_interface import \
 AppointmentManagementRepoInterface
-from doctor_appointment_management.shell.db.appointment_entity import Appointment as AppointmentEntity
+from doctor_appointment_management.shell.db.appointment_entity import AppointmentManagement as AppointmentEntity
 from django.shortcuts import get_object_or_404
 
 class AppointmentManagementRepository(AppointmentManagementRepoInterface):
-    def get_schedeuled(self) -> list:
-        return AppointmentEntity.objects.filter(status="scheduled").values("id", "reserved_at", "status")
+    def get_by_status(self, status: str) -> list:
+        return AppointmentEntity.objects.filter(status=status).values(
+            "id", "slot_id", "patient_id", "patient_name", "reserved_at", "status")
 
-    def cancel(self, appointment_id: int):
+    def update_status(self, appointment_id: int, status: str) -> None:
         appointment = get_object_or_404(AppointmentEntity, id=appointment_id)
-        appointment.delete()
-
-    def complete(self, appointment_id: int):
-        appointment = get_object_or_404(AppointmentEntity, id=appointment_id)
-        appointment.status = "completed"
+        appointment.status = status
         appointment.save()
+
+    def add_booked_appointment(self, appointment_data) -> None:
+        AppointmentEntity.objects.create(**appointment_data)

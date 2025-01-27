@@ -2,13 +2,13 @@ from abc import ABC, abstractmethod
 
 class AppointmentManagementRepoInterface(ABC):
     @abstractmethod
-    def get_schedeuled(self) -> list:
-        pass
+    def get_by_status(self, status: str) -> list:
+        raise NotImplementedError
 
     @abstractmethod
-    def cancel(self, appointment_id: int) -> None:
-        pass
+    def update_status(self, appointment_id: int, status: str) -> None:
+        raise NotImplementedError
 
     @abstractmethod
-    def complete(self, appointment_id: int) -> None:
-        pass
+    def add_booked_appointment(self, appointment_data) -> None:
+        raise NotImplementedError
